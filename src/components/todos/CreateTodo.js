@@ -21,6 +21,9 @@ class CreateTodo extends Component {
     this.props.store.dispatch({
       type: 'ADD_TODO', todo: this.state,
     });
+    this.setState({
+      text: '',
+    });
   }
 
   render() {
@@ -29,11 +32,11 @@ class CreateTodo extends Component {
         <form onSubmit={(event) => this.handleSubmit(event)}>
           <p>
             <label>add todo</label>
-            <input type="text" onChange={(event) => this.handleChange(event)} />
+            <input type="text" value={this.state.text} onChange={(event) => this.handleChange(event)} />
           </p>
           <input type="submit" />
         </form>
-        {this.state.text}
+        // {this.state.text}
       </div>
     );
   }
