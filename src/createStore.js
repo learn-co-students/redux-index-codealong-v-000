@@ -11,7 +11,7 @@ export default function createStore(reducer){
       console.log(state)
       render()
     }
-
+  
     function getState(){
       return state;
     }
