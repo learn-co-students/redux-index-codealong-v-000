@@ -1,14 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Todo extends Component {
-
-  render() {
-    return(
-      <div>
-        Our Todo
-      </div>
-    );
-  }
+const Todo = ({ text }) => {
+  return(
+    <div>
+      <li>{text}</li>
+    </div>
+  );
 };
 
 export default Todo;
