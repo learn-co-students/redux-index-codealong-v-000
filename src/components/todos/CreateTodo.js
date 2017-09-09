@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Todos from './Todos';
 
 class CreateTodo extends Component {
 
@@ -10,31 +11,33 @@ class CreateTodo extends Component {
     };
   }
 
-  handleChange(event) {
+  handleChange = (event) => {
     this.setState({
       text: event.target.value
     });
   }
 
-  handleSubmit(event) {
+  handleSubmit = (event) => {
     event.preventDefault();
     this.props.store.dispatch({
       type: 'ADD_TODO',
       todo: this.state,
     });
+    this.setState({
+      text: ''
+    })
   }
 
   render() {
     return(
       <div>
-        <form onSubmit={(event) => this.handleSubmit(event)}>
+        <form onSubmit={this.handleSubmit}>
           <p>
             <label>add todo</label>
-            <input type="text" onChange={(event) => this.handleChange(event)} />
+            <input type="text" value={this.state.text} onChange={this.handleChange} />
           </p>
           <input type="submit" />
         </form>
-        {this.state.text}
       </div>
     );
   }
