@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class CreateTodo extends Component {
+export default class CreateTodo extends Component {
 
   constructor(props) {
     super(props);
@@ -22,7 +22,10 @@ class CreateTodo extends Component {
       type: 'ADD_TODO',
       todo: this.state,
     });
-  }
+    this.setState({
+    text: '',
+  });
+}
 
   render() {
     return(
@@ -30,14 +33,14 @@ class CreateTodo extends Component {
         <form onSubmit={(event) => this.handleSubmit(event)}>
           <p>
             <label>add todo</label>
-            <input type="text" onChange={(event) => this.handleChange(event)} />
+            <input
+              type="text"
+              value={this.state.text} /* <- add value here */
+              onChange={(event) => this.handleChange(event)} />
           </p>
           <input type="submit" />
         </form>
-        {this.state.text}
       </div>
     );
   }
-};
-
-export default CreateTodo;
+}
