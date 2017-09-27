@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class CreateTodo extends Component {
+export default class CreateTodo extends Component {
 
   constructor(props) {
     super(props);
@@ -27,21 +27,20 @@ class CreateTodo extends Component {
   });
 }
 
-render() {
-  return(
-    <div>
-      <form onSubmit={(event) => this.handleSubmit(event)}>
-        <p>
-          <label>add todo</label>
-          <input
-            type="text"
-            value={this.state.text} /* <- add value here */
-            onChange={(event) => this.handleChange(event)} />
-        </p>
-        <input type="submit" />
-      </form>
-    </div>
-  );
+  render() {
+    return(
+      <div>
+        <form onSubmit={(event) => this.handleSubmit(event)}>
+          <p>
+            <label>add todo</label>
+            <input
+              type="text"
+              value={this.state.text} /* <- add value here */
+              onChange={(event) => this.handleChange(event)} />
+          </p>
+          <input type="submit" />
+        </form>
+      </div>
+    );
+  }
 }
-
-export default CreateTodo;
