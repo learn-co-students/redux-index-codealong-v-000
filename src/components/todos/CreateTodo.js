@@ -22,22 +22,26 @@ class CreateTodo extends Component {
       type: 'ADD_TODO',
       todo: this.state,
     });
-  }
+    this.setState({
+    text: '',
+  });
+}
 
-  render() {
-    return(
-      <div>
-        <form onSubmit={(event) => this.handleSubmit(event)}>
-          <p>
-            <label>add todo</label>
-            <input type="text" onChange={(event) => this.handleChange(event)} />
-          </p>
-          <input type="submit" />
-        </form>
-        {this.state.text}
-      </div>
-    );
-  }
-};
+render() {
+  return(
+    <div>
+      <form onSubmit={(event) => this.handleSubmit(event)}>
+        <p>
+          <label>add todo</label>
+          <input
+            type="text"
+            value={this.state.text} /* <- add value here */
+            onChange={(event) => this.handleChange(event)} />
+        </p>
+        <input type="submit" />
+      </form>
+    </div>
+  );
+}
 
 export default CreateTodo;
