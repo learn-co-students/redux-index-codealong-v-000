@@ -22,6 +22,9 @@ class CreateTodo extends Component {
       type: 'ADD_TODO',
       todo: this.state,
     });
+     this.setState({
+    text: '',
+  });
   }
 
   render() {
@@ -34,7 +37,6 @@ class CreateTodo extends Component {
           </p>
           <input type="submit" />
         </form>
-        {this.state.text}
       </div>
     );
   }
