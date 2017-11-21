@@ -18,14 +18,18 @@ class CreateTodo extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.props.store.dispatch({
-      type: 'ADD_TODO',
-      todo: this.state,
-    });
-    this.setState({
-      text: '',
-    });
-  }
+    if (this.state.text === ""){
+      this.setState({ text: 'please enter a Todo...'})
+    } else {
+      this.props.store.dispatch({
+        type: 'ADD_TODO',
+        todo: this.state,
+      });
+      this.setState({
+        text: '',
+      });
+    }
+  };
 
   render() {
     return(

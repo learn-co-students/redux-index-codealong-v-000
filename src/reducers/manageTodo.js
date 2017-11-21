@@ -1,5 +1,9 @@
 export default function manageTodo(state = {
-  todos: [],
+  todos: [
+    {text: 'buy groceries'}, 
+    {text: 'feed birds'}, 
+    {text: 'pay tax'},
+  ],
 }, action) {
   switch (action.type) {
     case 'ADD_TODO':
