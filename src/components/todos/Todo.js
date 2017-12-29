@@ -1,14 +1,5 @@
 import React, { Component } from 'react';
 
-class Todo extends Component {
-
-  render() {
-    return(
-      <div>
-        Our Todo
-      </div>
-    );
-  }
-};
+const Todo = ({ text }) => <li>{text}</li>;
 
 export default Todo;

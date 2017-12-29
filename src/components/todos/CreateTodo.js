@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 class CreateTodo extends Component {
-
   constructor(props) {
     super(props);
 
@@ -20,24 +19,28 @@ class CreateTodo extends Component {
     event.preventDefault();
     this.props.store.dispatch({
       type: 'ADD_TODO',
-      todo: this.state,
+      todo: this.state
     });
+    this.setState({ text: '' });
   }
 
   render() {
-    return(
+    return (
       <div>
-        <form onSubmit={(event) => this.handleSubmit(event)}>
+        <form onSubmit={event => this.handleSubmit(event)}>
           <p>
             <label>add todo</label>
-            <input type="text" onChange={(event) => this.handleChange(event)} />
+            <input
+              type="text"
+              onChange={event => this.handleChange(event)}
+              value={this.state.text}
+            />
           </p>
           <input type="submit" />
         </form>
-        {this.state.text}
       </div>
     );
   }
-};
+}
 
 export default CreateTodo;
