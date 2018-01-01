@@ -6,35 +6,40 @@ class CreateTodo extends Component {
     super(props);
 
     this.state = {
-      text: ''
+      text: '',
     };
   }
 
-  handleChange(event) {
+  handleOnChange(event) {
     this.setState({
-      text: event.target.value
+      text: event.target.value,
     });
   }
 
-  handleSubmit(event) {
+  handleOnSubmit(event) {
     event.preventDefault();
     this.props.store.dispatch({
       type: 'ADD_TODO',
       todo: this.state,
     });
+    this.setState({
+      text: '',
+    });
   }
 
   render() {
-    return(
+    return (
       <div>
-        <form onSubmit={(event) => this.handleSubmit(event)}>
+        <form onSubmit={(event) => this.handleOnSubmit(event)}>
           <p>
             <label>add todo</label>
-            <input type="text" onChange={(event) => this.handleChange(event)} />
+            <input
+              type="text"
+              value={this.state.text}
+              onChange={(event) => this.handleOnChange(event)}/>
           </p>
           <input type="submit" />
         </form>
-        {this.state.text}
       </div>
     );
   }
