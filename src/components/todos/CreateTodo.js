@@ -17,12 +17,16 @@ class CreateTodo extends Component {
   }
 
   handleSubmit(event) {
-    event.preventDefault();
-    this.props.store.dispatch({
-      type: 'ADD_TODO',
-      todo: this.state,
-    });
-  }
+  event.preventDefault();
+  this.props.store.dispatch({
+    type: 'ADD_TODO',
+    todo: this.state,
+  });
+  this.setState({
+    text: '',
+  });
+}
+
 
   render() {
     return(
@@ -34,7 +38,6 @@ class CreateTodo extends Component {
           </p>
           <input type="submit" />
         </form>
-        {this.state.text}
       </div>
     );
   }
