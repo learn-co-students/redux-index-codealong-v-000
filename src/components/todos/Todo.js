@@ -5,7 +5,7 @@ class Todo extends Component {
   render() {
     return(
       <div>
-        Our Todo
+        <li style={{border: '1px solid red'}}>{this.props.text}</li>
       </div>
     );
   }
