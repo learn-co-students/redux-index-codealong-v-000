@@ -1,38 +1,37 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 class CreateTodo extends Component {
-
   constructor(props) {
-    super(props);
+    super(props)
 
     this.state = {
       text: 'add a todo, Frodo!'
-    };
+    }
   }
 
   handleChange(event) {
     this.setState({
       text: event.target.value
-    });
+    })
   }
 
   handleSubmit(event) {
-    event.preventDefault();
-    if (this.state.text === ""){
-      this.setState({ text: 'please enter a Todo...'})
+    event.preventDefault()
+    if (this.state.text === "") {
+      this.setState({ text: 'please enter a Todo...' })
     } else {
       this.props.store.dispatch({
         type: 'ADD_TODO',
         todo: this.state,
-      });
+      })
       this.setState({
-        text: '',
-      });
+        text: ''
+      })
     }
-  };
+  }
 
   render() {
-    return(
+    return (
       <div>
         <form onSubmit={(event) => this.handleSubmit(event)}>
           <p>
@@ -42,8 +41,8 @@ class CreateTodo extends Component {
           <input type="submit" />
         </form>
       </div>
-    );
+    )
   }
-};
+}
 
-export default CreateTodo;
+export default CreateTodo
