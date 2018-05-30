@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react';
 
 class Todo extends Component {
@@ -5,7 +6,7 @@ class Todo extends Component {
   render() {
     return(
       <div>
-        Our Todo
+        <li>{this.props.text}</li>
       </div>
     );
   }
