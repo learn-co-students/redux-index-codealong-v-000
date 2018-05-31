@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import ToDo from './Todo'
 
 class Todos extends Component {
 
   render() {
 
     const todos = this.props.store.getState().todos.map((todo, index) => {
-      return <li key={index}>{todo.text}</li>
+      return <ToDo text={todo.text} key={index}/>
     });
 
     return(
