@@ -18,3 +18,7 @@ export default function createStore(reducer){
 
     return {dispatch: dispatch, getState: getState}
   }
+
+
+// the store is our encapsulating/bundled function (closure) that holds our Redux flow:
+// Action -> Reducer -> New State
