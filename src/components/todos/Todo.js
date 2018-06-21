@@ -4,9 +4,7 @@ class Todo extends Component {
 
   render() {
     return(
-      <div>
-        Our Todo
-      </div>
+      <li key={this.props.index}>{this.props.text}</li>
     );
   }
 };
