@@ -6,6 +6,7 @@ import createStore from './createStore'
 
 let store = createStore(manageTodo)
 
+
 export function render(){
   ReactDOM.render(
     <App store={store} />,
