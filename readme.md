@@ -150,6 +150,6 @@ Ok, so we got our __Todos__ component working simply by accessing the state from
 the store, and then iterating through the list in the __Todos__ component.
 
 
-## References
+# References
 
 - [React Documentation - Controlled Components](https://facebook.github.io/react/docs/forms.html)
