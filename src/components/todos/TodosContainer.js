@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
+import Todo from './Todo';
 
 class TodosContainer extends Component {
 
@@ -14,7 +15,7 @@ class TodosContainer extends Component {
   }
 };
 
-mapStateToProps = state => {
+const mapStateToProps = state => {
   return {
     todos: state.todos
   }
