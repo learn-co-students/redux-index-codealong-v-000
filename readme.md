@@ -9,7 +9,7 @@ by displaying our list of todos. By the end of this lesson, you will be able to:
 
 ## Goal
 
-Our state is properly updating but we are not displaying these updates to the
+Our state is properly  but we are not displaying these updates to the
 user. We need a component that references the store and then uses the data from
 the store to reference the list of Todos.
 
