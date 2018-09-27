@@ -1,6 +1,6 @@
 # Displaying a List of items with Redux
 
-## Objectives
+## Objectives/Lecture
 
 With this lesson we'll finish up what we worked on the in the forms code along
 by displaying our list of todos. By the end of this lesson, you will be able to:
