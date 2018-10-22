@@ -1,48 +1,49 @@
 import React, { Component } from 'react'
 
 class CreateTodo extends Component {
-  constructor(props) {
-    super(props)
+	constructor(props) {
+		super(props)
 
-    this.state = {
-      text: 'add a todo, Frodo!'
-    }
-  }
+		this.state = {
+			text: 'add a todo, Frodo!'
+		}
+	}
 
-  handleChange(event) {
-    this.setState({
-      text: event.target.value
-    })
-  }
+	handleChange(event) {
+		this.setState({
+			text: event.target.value
+		})
+	}
 
-  handleSubmit(event) {
-    event.preventDefault()
-    if (this.state.text === "") {
-      this.setState({ text: 'please enter a Todo...' })
-    } else {
-      this.props.store.dispatch({
-        type: 'ADD_TODO',
-        todo: this.state,
-      })
-      this.setState({
-        text: ''
-      })
-    }
-  }
+	handleSubmit(event) {
+		event.preventDefault()
+		if (this.state.text === "") {
+			this.setState({ text: 'please enter a Todo...' })
+		} else {
+			this.props.store.dispatch({
+				type: 'ADD_TODO',
+				todo: this.state,
+			})
+			this.setState({
+				text: ''
+			})
+		}
+	}
 
-  render() {
-    return (
-      <div>
-        <form onSubmit={(event) => this.handleSubmit(event)}>
-          <p>
-            <label>add todo</label>
-            <input type="text" value={this.state.text} onChange={(event) => this.handleChange(event)} />
-          </p>
-          <input type="submit" />
-        </form>
-      </div>
-    )
-  }
+	render() {
+		return (
+			<div>
+				<form onSubmit={(event) => this.handleSubmit(event)}>
+					<p>
+						<label>add todo</label>
+						<input type="text" value={this.state.text} onChange={(event) => this.handleChange(event)} />
+					</p>
+					<input type="submit" />
+				</form>
+			</div>
+		)
+	}
 }
+
 
 export default CreateTodo
