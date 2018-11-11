@@ -22,6 +22,10 @@ class CreateTodo extends Component {
       type: 'ADD_TODO',
       todo: this.state,
     });
+    this.setState({
+      text: '',
+    })
+    event.target.text=''
   }
 
   render() {
