@@ -1,6 +1,8 @@
-export default function manageTodo(state = {
-  todos: [],
-}, action) {
+let initState = {
+  todos: []
+}
+
+export default function manageTodo(state = initState, action) {
   switch (action.type) {
     case 'ADD_TODO':
 
