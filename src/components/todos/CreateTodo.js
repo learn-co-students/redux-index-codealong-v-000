@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
+//1.CreateTodo component is handling the creation side of things
+
 class CreateTodo extends Component {
 
   constructor() {
@@ -13,6 +15,10 @@ class CreateTodo extends Component {
   handleSubmit = event => {
     event.preventDefault();
     this.props.addTodo(this.state)
+    this.setState({
+      text: '',
+    })
+    // ^to clear out input
   }
 
   handleChange(event) {
