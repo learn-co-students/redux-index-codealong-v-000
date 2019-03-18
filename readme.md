@@ -20,6 +20,7 @@ make a new component where we'll be getting todos from the store. We'll call
 this `TodosContainer` and connect it to __Redux__.
 
 
+
 ```js
 // ./src/components/todos/TodosContainer.js
 
