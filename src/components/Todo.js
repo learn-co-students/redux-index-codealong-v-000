@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Todo = props => {
-  return (
+  return(
     <li>{props.text}</li>
   );
 };
