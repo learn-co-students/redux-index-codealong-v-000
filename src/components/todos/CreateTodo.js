@@ -4,21 +4,24 @@ import { connect } from 'react-redux'
 class CreateTodo extends Component {
 
   constructor() {
-    super();
+    super()
     this.state = {
       text: '',
-    };
+    }
   }
 
   handleSubmit = event => {
-    event.preventDefault();
+    event.preventDefault()
     this.props.addTodo(this.state)
+    this.setState({
+      text: ''
+    })
   }
 
   handleChange(event) {
     this.setState({
       text: event.target.value
-    });
+    })
   }
 
   render() {
@@ -30,12 +33,12 @@ class CreateTodo extends Component {
           <input type="submit" />
        </form>
      </div>
-   );
+   )
   }
-};
+}
 
 const mapDispatchToProps = dispatch => ({
   addTodo: formData => dispatch({ type: 'ADD_TODO', payload: formData })
 })
 
-export default connect(null, mapDispatchToProps)(CreateTodo);
+export default connect(null, mapDispatchToProps)(CreateTodo)
