@@ -9,7 +9,7 @@ class CreateTodo extends Component {
       text: '',
     };
   }
-  
+
 
   handleSubmit = event => {
     event.preventDefault();
@@ -18,6 +18,8 @@ class CreateTodo extends Component {
       text: '',
     })
   }
+
+  
 
   handleChange(event) {
     this.setState({
