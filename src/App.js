@@ -4,6 +4,9 @@ import TodosContainer from './components/todos/TodosContainer'
 
 class App extends Component {
   render() {
+    // Notice that we're not passing anything to
+    // CreateTodo or TodosContainer. That's a nice
+    // feature of using Redux.
     return (
       <div className="App">
         <CreateTodo />
@@ -13,4 +16,6 @@ class App extends Component {
   }
 }
 
+// Notice that App does not need to be connected to 
+// Redux. 
 export default App;
