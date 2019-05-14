@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 class CreateTodo extends Component {
 
@@ -8,18 +8,21 @@ class CreateTodo extends Component {
     this.state = {
       text: '',
     };
-  }
+  };
 
   handleSubmit = event => {
     event.preventDefault();
     this.props.addTodo(this.state)
-  }
+    this.setState({
+      text: '',
+    });
+  };
 
   handleChange(event) {
     this.setState({
       text: event.target.value
     });
-  }
+  };
 
   render() {
     return(
@@ -36,6 +39,6 @@ class CreateTodo extends Component {
 
 const mapDispatchToProps = dispatch => ({
   addTodo: formData => dispatch({ type: 'ADD_TODO', payload: formData })
-})
+});;
 
 export default connect(null, mapDispatchToProps)(CreateTodo);
