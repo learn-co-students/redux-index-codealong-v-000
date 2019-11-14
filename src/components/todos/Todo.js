@@ -9,5 +9,6 @@ const Todo = props => {
         </li>
     )
 }
-
+//  Then we IMPORT this Presentational Componet TodosContainer.js. Then we USe
+// .map to iterate over in in TodosCcontainer.js
 export default Todo;

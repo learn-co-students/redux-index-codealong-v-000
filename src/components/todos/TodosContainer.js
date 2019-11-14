@@ -6,7 +6,7 @@ import Todo  from './Todo'
 // updates to the user.We need a component that references the store and then
 // uses the data from the store to reference the list of Todos.
 
-
+// Purpose is to get Data from the Store.
 
 class TodosContainer extends Component {
    
@@ -20,6 +20,8 @@ class TodosContainer extends Component {
          )
      }
 }
+//  Helps us get data from the Store in Redux
+//  Then we create a Presentational ToDo components Which is Todo.js in this case
 
 const mapStateToProps = state => {
     return {
