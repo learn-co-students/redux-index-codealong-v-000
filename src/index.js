@@ -6,6 +6,7 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 
 let store = createStore(manageTodo);
+store.getState()
 
 ReactDOM.render(
   <Provider store={store}>
