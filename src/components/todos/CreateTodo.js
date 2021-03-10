@@ -19,6 +19,9 @@ class CreateTodo extends Component {
     this.setState({
       text: event.target.value
     });
+    this.setState({
+      text: '',
+    })
   }
 
   render() {
