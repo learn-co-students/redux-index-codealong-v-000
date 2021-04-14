@@ -8,11 +8,16 @@ class CreateTodo extends Component {
     this.state = {
       text: '',
     };
+    this.baseState = this.state;
   }
 
   handleSubmit = event => {
     event.preventDefault();
-    this.props.addTodo(this.state)
+    console.log(!event.target.value)
+    if (!event.target.value) {
+      this.props.addTodo(this.state)
+      this.setState(this.baseState)
+    }
   }
 
   handleChange(event) {
@@ -25,7 +30,7 @@ class CreateTodo extends Component {
     return(
       <div>
         <form onSubmit={this.handleSubmit}>
-    	    <label>add todo</label>
+    	    <label>add todo </label>
           <input type="text" onChange={(event) => this.handleChange(event)} value={this.state.text}/>
           <input type="submit" />
        </form>
