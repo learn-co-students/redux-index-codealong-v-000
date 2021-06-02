@@ -3,8 +3,8 @@ import { connect } from 'react-redux'
 
 class CreateTodo extends Component {
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       text: '',
     };
